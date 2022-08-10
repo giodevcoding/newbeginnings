@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "new-beginnings/jsx-block",
+    "title": "JSX Block",
+    "icon": "//dashicon-cover-image",
+    
+    "attributes": {
+        "attr": { "type": "string", "default": "full" }
+    },
+
+    "editorStyle": "new-beginnings-jsx-block-style",
+    "style": "new-beginnings-jsx-block-style"
+}

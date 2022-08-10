@@ -1,0 +1,14 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "new-beginnings/header",
+    "title": "Header",
+    "icon": "menu",
+
+    "attributes": {
+        "align": {"type": "string", "default": "full"}
+    },
+ 
+    "editorStyle": "new-beginnings-header-style",
+    "style": "new-beginnings-header-style"
+}

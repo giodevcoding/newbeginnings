@@ -1,0 +1,10 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "new-beginnings/php-block",
+    "title": "PHP Block",
+    "icon": "//admin-page",
+
+    "editorStyle": "new-beginnings-php-block-style",
+    "style": "new-beginnings-php-block-style"
+}

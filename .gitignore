@@ -1,0 +1,10 @@
+**/node_modules/
+**/languages/
+**/build/
+**/package-lock.json
+**/*.org
+
+#wp-content
+/upgrade/
+/uploads/
+/index.php
