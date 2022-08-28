@@ -8,7 +8,9 @@
     "attributes": {
         "align": {"type": "string", "default": "full"}
     },
- 
+
+    "editorScript": "new-beginnings-header-editor-script",
+    "viewScript": "new-beginnings-header-view-script",
     "editorStyle": "new-beginnings-header-style",
-    "style": "new-beginnings-header-style"
+    "style": "new-beginnings-header-style"   
 }

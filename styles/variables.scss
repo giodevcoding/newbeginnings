@@ -1,0 +1,44 @@
+$hnb-dark-blue: #0A1D47;
+$hnb-light-blue: #4D7EA8;
+$hnb-green: #2DD881;
+$hnb-mauve: #AC7B84;
+$hnb-salmon: #F45B69;
+$hnb-near-white: #FEFCFD;
+$hnb-off-white: #F1EDEE;
+$hnb-light-grey: #BDBDBD;
+$hnb-grey: #757575;
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+@mixin sm-screen {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin md-screen {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+            
+@mixin lg-screen {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+@mixin xl-screen {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin px-screen($pixels) {
+    @media (min-width: #{$pixels+'px'}) {
+        @content;
+    }
+}

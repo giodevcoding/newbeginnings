@@ -1,3 +1,173 @@
-.nb-header h1 {
-    color: blue;
+@import '../../styles/variables.scss';
+
+.header {
+    display: flex;
+    position: sticky;
+
+
+    & .header__col {
+
+        flex: 1;
+        &--left {
+            flex-grow: 1;
+        }
+        
+        @include lg-screen {
+            &--left {
+                flex: 0;
+                flex-grow: 0;
+            }
+        }
+    }
+
+    @include lg-screen {
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.header__logo {
+
+    margin: 16px auto;
+
+    @include lg-screen {
+        margin: 0px;
+        margin-left: 20px;
+        max-height: 48px;
+    }
+    
+}
+
+.header__nav-buttons {
+    display: none;
+
+    @include lg-screen {
+
+        display: flex;
+        list-style-type: none;
+        justify-content: flex-end; 
+        margin: 0px;
+        padding: 0px;
+
+        & .header__nav-buttons__dropdown {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            
+            & i {
+                margin-left: 2px;
+                font-size: 12px;
+            }
+        }
+    
+        & .header__nav-buttons__connect {
+            background-color: $hnb-dark-blue;
+            color: $hnb-green;
+            
+            padding: 20px 50px;
+            max-width: 200px;
+        }
+    
+        & a {
+            font-family: 'Lato';
+            font-size: 20px;
+            color: #0A1D47;
+            text-decoration: none;
+    
+            padding: 0px;
+            margin: 0px;
+    
+            & li {
+                padding: 20px 25px; 
+            }
+    
+            // down-size icons
+        }
+    } 
+}
+
+.header__nav-hamburger--wrapper {
+    display: flex;
+    height: 100%;
+    float: right;
+    margin-right: 10vw;
+    align-items: center;
+    
+    transform: scaleX(1.4);
+}
+
+.header__nav-hamburger {
+
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: -8px;
+
+    &__bar {
+        font-size: 40px;
+        color: $hnb-dark-blue;
+        margin-top: -0.45em;
+        margin-bottom: -0.45em;
+
+        &--rotate-right {
+            transform: rotateZ(55deg) translateY(0.16em) translateX(0.2em);
+            transition: transform 1s;
+        }
+        
+        &--unrotate-right {
+            transform: rotateZ(0deg) translateY(0em) translateX(0em);
+            transition: transform 1s;
+        }
+
+        &--rotate-left {
+            transform: rotateZ(-55deg) translateY(-0.16em) translateX(0.25em);
+            transition: transform 1s;
+        }
+
+        &--unrotate-left {
+            transform: rotateZ(0deg) translateY(0em) translateX(0em);
+            transition: transform 1s;
+        }
+
+        &--hide {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 1s, opacity 1s;
+        }
+
+        &--show {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 1s, opacity 1s;
+        }
+    }
+
+
+    @include lg-screen {
+        display: none;
+    }
+}
+
+.nav-mobile-menu {
+
+    &--fade-in {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 1s, opacity 1s;
+    }
+
+    &--show {
+        display: block;
+    }
+
+    &--fade-out {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 1s, opacity 1s;
+    }
+
+    &--hide {
+        display: none;
+    }
+
 }

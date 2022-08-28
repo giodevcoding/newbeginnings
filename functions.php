@@ -8,6 +8,26 @@ function hnb_styles() {
         array(),
         wp_get_theme()->get( 'Version' )
     );
+
+    wp_enqueue_style(
+        'google-fonts-lato',
+        'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap',
+        array(),
+        false
+    );
+
+    wp_enqueue_style(
+        'bootstrap-icons',
+        'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css',
+        array(),
+        false
+    );
+}
+
+add_action( 'wp_head', 'hnb_head_injection' );
+function hnb_head_injection() {
+    echo ( '<link rel="preconnect" href="https://fonts.googleapis.com">' );
+    echo ( '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' ); 
 }
  
 
