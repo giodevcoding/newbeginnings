@@ -1,2 +1,2 @@
-import "../styles/style.scss";
+import "../styles/theme.scss";
 import "../styles/editor.scss";

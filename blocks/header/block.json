@@ -2,15 +2,14 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 2,
     "name": "new-beginnings/header",
-    "title": "Header",
+    "title": "Site Header",
     "icon": "menu",
 
     "attributes": {
-        "align": {"type": "string", "default": "full"}
+        "selectedMenu": {"type": "string"}
     },
 
-    "editorScript": "new-beginnings-header-editor-script",
-    "viewScript": "new-beginnings-header-view-script",
-    "editorStyle": "new-beginnings-header-style",
-    "style": "new-beginnings-header-style"   
+    "editorScript": "file:./build/index.js",
+    "viewScript": "file:./build/view.js",
+    "style": "file:./build/index.css"
 }

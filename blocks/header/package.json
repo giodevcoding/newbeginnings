@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "wp-scripts start index.js frontend.js",
-    "build": "wp-scripts build index.js frontend.js",
+    "start": "wp-scripts start index.js view.js",
+    "build": "wp-scripts build index.js view.js",
     "dev": "wp-scripts start",
     "devFast": "wp-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,10 +15,11 @@
   "license": "ISC",
   "dependencies": {
     "@wordpress/block-editor": "^9.3.0",
+    "@wordpress/core-data": "^4.14.0",
+    "@wordpress/data": "^7.0.0",
     "@wordpress/icons": "^9.2.0",
     "@wordpress/scripts": "^23.7.2",
     "@wordpress/server-side-render": "^3.9.0",
-    "axios": "^0.21.1",
     "wp-scripts": "^0.0.1-security"
   }
 }

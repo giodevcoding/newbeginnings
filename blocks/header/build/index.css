@@ -1,9 +1,8 @@
-/*!************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./render.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./render.scss ***!
+  \************************************************************************************************************************************************************************************************************************************/
 .header {
   display: flex;
-  position: -webkit-sticky;
   position: sticky;
 }
 .header .header__col {
@@ -26,13 +25,13 @@
 }
 
 .header__logo {
-  margin: 16px auto;
+  margin: 1.6rem auto;
 }
 @media (min-width: 992px) {
   .header__logo {
-    margin: 0px;
-    margin-left: 20px;
-    max-height: 48px;
+    margin: 0;
+    margin-left: 2rem;
+    max-height: 4.8rem;
   }
 }
 
@@ -44,34 +43,116 @@
     display: flex;
     list-style-type: none;
     justify-content: flex-end;
-    margin: 0px;
-    padding: 0px;
   }
-  .header__nav-buttons .header__nav-buttons__dropdown {
+  .header__nav-buttons .header__button {
+    font-family: "Lato";
+    font-size: 2rem;
+    color: #0A1D47;
+    text-decoration: none;
+    padding: 2rem 2.5rem;
+    transition: color 0.1s;
+  }
+  .header__nav-buttons .header__button:hover .header__button-text {
+    color: #4D7EA8;
+    transition: color 0.1s;
+  }
+  .header__nav-buttons .header__button--dropdown {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    transition: color 0.1s, box-shadow 0.1s;
   }
-  .header__nav-buttons .header__nav-buttons__dropdown i {
-    margin-left: 2px;
-    font-size: 12px;
+  .header__nav-buttons .header__button--dropdown .bi-caret-down-fill {
+    margin-left: 0.2rem;
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
   }
-  .header__nav-buttons .header__nav-buttons__connect {
+  .header__nav-buttons .header__button--active .header__button-text {
+    margin-bottom: -0.3rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.1rem solid #0A1D47;
+  }
+  .header__nav-buttons .header__button .header__button-text {
+    transition: color 0.1s;
+  }
+  .header__nav-buttons .header__button--last {
     background-color: #0A1D47;
     color: #2DD881;
-    padding: 20px 50px;
-    max-width: 200px;
+    padding: 2rem 5rem;
+    max-width: 20rem;
+    transition: color 0.1s, background-color, 0.1s;
   }
-  .header__nav-buttons a {
-    font-family: "Lato";
-    font-size: 20px;
+  .header__nav-buttons .header__button--last.header__button--active .header__button-text {
+    border-bottom-color: #2DD881;
+  }
+  .header__nav-buttons .header__button--last:hover {
+    background-color: #2DD881;
     color: #0A1D47;
-    text-decoration: none;
-    padding: 0px;
-    margin: 0px;
+    box-shadow: none;
+    transition: color 0.1s, background-color 0.1s;
   }
-  .header__nav-buttons a li {
-    padding: 20px 25px;
+  .header__nav-buttons .header__button--last:hover .header__button-text {
+    color: inherit;
+  }
+  .header__nav-buttons .header__button--last:hover.header__button--active .header__button-text {
+    border-bottom-color: #0A1D47;
+  }
+  .header__nav-buttons .header__dropdown-container {
+    position: relative;
+  }
+  .header__nav-buttons .header__dropdown-container:hover .header__button--dropdown {
+    color: #4D7EA8;
+    box-shadow: inset 0 -0.6rem 0 -0.4rem #2DD881;
+    transition: color 0.1s, box-shadow 0.1s;
+  }
+  .header__nav-buttons .header__dropdown-container:hover .header__button--last {
+    background-color: #2DD881;
+    color: #0A1D47;
+    box-shadow: none;
+    transition: color 0.1s, background-color 0.1s;
+  }
+  .header__nav-buttons .header__dropdown-container:hover .header__button--last .header__button-text {
+    color: inherit;
+  }
+  .header__nav-buttons .header__dropdown-container:hover .header__dropdown-buttons {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.25s;
+  }
+  .header__nav-buttons .header__dropdown-container .header__dropdown-buttons {
+    position: absolute;
+    visibility: hidden;
+    width: 18.4rem;
+    padding-left: 0.2rem;
+    padding-top: 0;
+    background-image: linear-gradient(to bottom, #2DD881, #0A1D47);
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    box-shadow: 0.4rem 0.4rem 1rem -0.5rem #757575;
+    opacity: 0;
+    transition: visibility 0.1s, opacity 0.1s;
+  }
+  .header__nav-buttons .header__dropdown-container .header__dropdown-buttons .header__dropdown-background {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 1rem;
+    padding-top: 0.8rem;
+    background-color: #FEFCFD;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    box-shadow: inset 0.4rem 0 0.4rem -0.4rem #757575;
+  }
+  .header__nav-buttons .header__dropdown-container .header__dropdown-buttons .header__dropdown-background .header__button {
+    background-color: transparent;
+    margin-bottom: 0.8rem;
+    margin-left: 2.5rem;
+    padding: 0.5rem 0;
+    width: 13.4rem;
+    border: none;
+    color: #0A1D47;
+    box-shadow: -1.2rem 1.5rem 0.4rem -1.5rem #757575;
   }
 }
 
@@ -87,40 +168,40 @@
 .header__nav-hamburger {
   display: flex;
   flex-direction: column;
-  padding: 0px;
-  margin: -8px;
+  padding: 0;
+  margin: -0.8rem;
 }
 .header__nav-hamburger__bar {
-  font-size: 40px;
+  font-size: 4rem;
   color: #0A1D47;
   margin-top: -0.45em;
   margin-bottom: -0.45em;
 }
 .header__nav-hamburger__bar--rotate-right {
   transform: rotateZ(55deg) translateY(0.16em) translateX(0.2em);
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 .header__nav-hamburger__bar--unrotate-right {
   transform: rotateZ(0deg) translateY(0em) translateX(0em);
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 .header__nav-hamburger__bar--rotate-left {
   transform: rotateZ(-55deg) translateY(-0.16em) translateX(0.25em);
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 .header__nav-hamburger__bar--unrotate-left {
   transform: rotateZ(0deg) translateY(0em) translateX(0em);
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 .header__nav-hamburger__bar--hide {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 1s, opacity 1s;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 .header__nav-hamburger__bar--show {
   visibility: visible;
   opacity: 1;
-  transition: visibility 1s, opacity 1s;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 @media (min-width: 992px) {
   .header__nav-hamburger {
@@ -128,6 +209,20 @@
   }
 }
 
+.nav-mobile-menu-wrapper {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+.nav-mobile-menu-wrapper--show {
+  display: block;
+}
+
+.nav-mobile-menu {
+  position: relative;
+  display: none;
+}
 .nav-mobile-menu--fade-in {
   visibility: visible;
   opacity: 1;
@@ -135,14 +230,185 @@
 }
 .nav-mobile-menu--show {
   display: block;
+  overflow: hidden;
+  height: calc(100vh - 8rem);
 }
 .nav-mobile-menu--fade-out {
   visibility: hidden;
   opacity: 0;
   transition: visibility 1s, opacity 1s;
 }
-.nav-mobile-menu--hide {
-  display: none;
+
+.nav-mobile-menu__menu-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #FEFCFD;
 }
+.nav-mobile-menu__menu-page.nav-mobile-menu__main-menu {
+  z-index: 1;
+  left: -100%;
+}
+.nav-mobile-menu__menu-page.nav-mobile-menu__main-menu--show {
+  left: 0;
+}
+.nav-mobile-menu__menu-page.nav-mobile-menu__sub-menu {
+  left: 100%;
+  z-index: 2;
+}
+.nav-mobile-menu__menu-page.nav-mobile-menu__sub-menu--active {
+  display: flex;
+  left: 0;
+}
+
+.slide-menu-left {
+  -webkit-animation: slide-menu-left 0.3s ease-in-out;
+          animation: slide-menu-left 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.slide-menu-right {
+  -webkit-animation: slide-menu-right 0.3s ease-in-out;
+          animation: slide-menu-right 0.3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+@-webkit-keyframes slide-menu-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-menu-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes slide-menu-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes slide-menu-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.nav-mobile-menu__nav-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.nav-mobile-menu__sub-menu .nav-mobile-menu__nav-buttons {
+  margin-top: 8rem;
+}
+
+.nav-mobile-menu__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0.4rem auto;
+  padding: 2rem 0;
+  width: 70%;
+  font-family: "Lato";
+  font-size: 2.4rem;
+  text-align: center;
+  color: #0A1D47;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  background-color: #FEFCFD;
+  border: none;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.nav-mobile-menu__button i {
+  margin-right: -3rem;
+  margin-left: 0.5rem;
+  margin-top: 0.4rem;
+  color: #4D7EA8;
+  font-size: 1.6rem;
+}
+.nav-mobile-menu__button:focus, .nav-mobile-menu__button:active, .nav-mobile-menu__button:hover {
+  outline: none;
+  border: none;
+  background-color: #FEFCFD;
+}
+@media (min-width: 576px) {
+  .nav-mobile-menu__button {
+    width: 40%;
+  }
+}
+
+.nav-mobile-menu__button::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 6rem;
+  box-shadow: 0 1.5rem 0.4rem -1.5rem #757575;
+}
+@media (min-width: 576px) {
+  .nav-mobile-menu__button::after {
+    width: 40%;
+  }
+}
+
+.nav-mobile-menu__button.nav-mobile-menu__button--close {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  width: auto;
+  color: #4D7EA8;
+  font-size: 2rem;
+}
+.nav-mobile-menu__button.nav-mobile-menu__button--close i {
+  font-size: 1.2rem;
+  margin: 0.4rem 0.5rem 0rem;
+}
+
+.nav-mobile-menu__button.nav-mobile-menu__button--close::after {
+  box-shadow: none;
+}
+
+.nav-mobile-menu__main-menu .nav-mobile-menu__button:last-child {
+  margin-top: 3.2rem;
+  background-color: #0A1D47;
+  color: #2DD881;
+}
+.nav-mobile-menu__main-menu .nav-mobile-menu__button:last-child::after {
+  box-shadow: none;
+}
+.nav-mobile-menu__main-menu .nav-mobile-menu__button:last-child i {
+  color: #2DD881;
+}
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./editor.scss ***!
+  \************************************************************************************************************************************************************************************************************************************/
+
 
 /*# sourceMappingURL=index.css.map*/
